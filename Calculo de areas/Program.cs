@@ -11,9 +11,9 @@ namespace Calculo_de_areas
         static void Main(string[] args)
         {
             try {
-                bool salida = false;
+                bool exit = false;
 
-                while (!salida)
+                while (!exit)
                 {
 
                     Console.WriteLine("Seleccione la figura de la cual desea calcular el área:");
@@ -21,13 +21,13 @@ namespace Calculo_de_areas
                     Console.WriteLine("2. Rectángulo");
                     Console.WriteLine("3. Salir del programa");
 
-                    string opcionString = Console.ReadLine();
-                    int opcion = 0;
-                    bool esNumeroValido=false;
+                    string optionString = Console.ReadLine();
+                    int option = 0;
+                    bool isValidNumber=false;
 
                     try
                     {
-                        opcion = Int32.Parse(opcionString);
+                        option = Int32.Parse(optionString);
                     }
                     catch (FormatException)
                     {
@@ -36,7 +36,7 @@ namespace Calculo_de_areas
                     }
 
 
-                    if (opcion == 1)
+                    if (option == 1)
                     {
                         double radio = 0;
 
@@ -45,73 +45,73 @@ namespace Calculo_de_areas
                             Console.WriteLine("Ingrese el radio del círculo: ");
                             string radioString = Console.ReadLine();
 
-                            esNumeroValido = Double.TryParse(radioString, out radio);
-                            if (!esNumeroValido)
+                            isValidNumber = Double.TryParse(radioString, out radio);
+                            if (!isValidNumber)
                             {
                                 Console.WriteLine("Error: Debe ingresar un número válido.");
                             }
                             else if (radio <= 0)
                             {
                                 Console.WriteLine("Error: El radio debe ser mayor que cero.");
-                                esNumeroValido = false;
+                                isValidNumber = false;
                             }
-                        } while (!esNumeroValido);
+                        } while (!isValidNumber);
 
-                        FiguraGeometrica figura = new Circulo(radio);
-                        figura.MostrarInformacion();
-                        figura.CalcularArea();
-                        figura.MostrarResultado();
+                        GeometricFigure figure = new Circle(radio);
+                        figure.ShowInformation();
+                        figure.CalculateArea();
+                        figure.ShowResult();
 
                     }
-                    else if (opcion == 2)
+                    else if (option == 2)
                     {
                         double baseRectangulo = 0;
                         double altura = 0;
-                        esNumeroValido = false;
+                        isValidNumber = false;
                         do
                         {
                             Console.WriteLine("Ingrese la base del rectángulo: ");
                             string baseString = Console.ReadLine();
 
-                            esNumeroValido = Double.TryParse(baseString, out baseRectangulo);
-                            if (!esNumeroValido)
+                            isValidNumber = Double.TryParse(baseString, out baseRectangulo);
+                            if (!isValidNumber)
                             {
                                 Console.WriteLine("Error: Debe ingresar un número válido.");
                             }
                             else if (baseRectangulo <= 0)
                             {
                                 Console.WriteLine("Error: La base debe ser mayor que cero.");
-                                esNumeroValido = false;
+                                isValidNumber = false;
                             }
-                        } while (!esNumeroValido);
+                        } while (!isValidNumber);
 
-                        esNumeroValido = false;
+                        isValidNumber = false;
                         do
                         {
                             Console.WriteLine("Ingrese la altura del rectángulo: ");
                             string alturaString = Console.ReadLine();
 
-                            esNumeroValido = Double.TryParse(alturaString, out altura);
-                            if (!esNumeroValido)
+                            isValidNumber = Double.TryParse(alturaString, out altura);
+                            if (!isValidNumber)
                             {
                                 Console.WriteLine("Error: Debe ingresar un número válido.");
                             }
                             else if (baseRectangulo <= 0)
                             {
                                 Console.WriteLine("Error: La base debe ser mayor que cero.");
-                                esNumeroValido = false;
+                                isValidNumber = false;
                             }
 
-                        } while (!esNumeroValido);
+                        } while (!isValidNumber);
 
-                        FiguraGeometrica figura = new Rectangulo(baseRectangulo, altura);
-                        figura.MostrarInformacion();
-                        figura.CalcularArea();
-                        figura.MostrarResultado();
+                        GeometricFigure figure = new Rectangle(baseRectangulo, altura);
+                        figure.ShowInformation();
+                        figure.CalculateArea();
+                        figure.ShowResult();
                     }
-                    else if (opcion == 3)
+                    else if (option == 3)
                     {
-                        salida = true;
+                        exit = true;
                         Console.WriteLine("Muchas Gracias por usar el programa.");
                     }
                     else
