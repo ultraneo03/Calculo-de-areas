@@ -18,7 +18,7 @@ namespace TestCalculoAreas
             circulo.CalculateArea();
 
             // Assert
-            Assert.AreEqual(circulo.getArea(), 78.539816339744831);
+            Assert.AreEqual(circulo.GetArea(), 78.539816339744831);
         }
 
         [TestMethod]
@@ -33,7 +33,7 @@ namespace TestCalculoAreas
             circulo.CalculateArea();
 
             // Assert
-            Assert.AreEqual(circulo.getArea(), 113.09733552923255);
+            Assert.AreEqual(circulo.GetArea(), 113.09733552923255);
         }
 
         [TestMethod]
@@ -48,7 +48,7 @@ namespace TestCalculoAreas
             circulo.CalculateArea();
 
             // Assert
-            Assert.AreEqual(circulo.getArea(), 153.93804002589985);
+            Assert.AreEqual(circulo.GetArea(), 153.93804002589985);
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace TestCalculoAreas
             circulo.CalculateArea();
 
             // Assert
-            Assert.AreEqual(circulo.getArea(), 201.06192982974676);
+            Assert.AreEqual(circulo.GetArea(), 201.06192982974676);
         }
     }
 }

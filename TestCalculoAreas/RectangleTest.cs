@@ -18,7 +18,7 @@ namespace TestCalculoAreas
             rectangulo.CalculateArea();
 
             // Assert
-            Assert.AreEqual(rectangulo.getArea(), 4);
+            Assert.AreEqual(rectangulo.GetArea(), 4);
         }
 
         [TestMethod]
@@ -34,7 +34,7 @@ namespace TestCalculoAreas
             rectangulo.CalculateArea();
 
             // Assert
-            Assert.AreEqual(rectangulo.getArea(), 15);
+            Assert.AreEqual(rectangulo.GetArea(), 15);
         }
     }
 }

@@ -5,7 +5,7 @@ namespace Calculo_de_areas
     class Program
     {
         /// <summary>
-        /// 
+        /// main program for calculate area to diferent geometric figures
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
@@ -120,7 +120,7 @@ namespace Calculo_de_areas
                     }
                 }
             } catch(Exception ex) {
-                Console.WriteLine("El valor ingresado no es valido.");
+                Console.WriteLine("Se presento un problema en el programa.");
             }
         } 
     }
